@@ -7,4 +7,16 @@ export default {
   // assetsBuildDirectory: "public/build",
   // publicPath: "/build/",
   // serverBuildPath: "build/index.js",
+  esbuild: {
+    plugins: [
+      {
+        name: 'alias-events',
+        setup(build) {
+          build.onResolve({ filter: /^events$/ }, () => {
+            return { path: require.resolve('./shims/events.js') };
+          });
+        },
+      },
+    ],
+  },
 };

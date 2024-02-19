@@ -1,17 +1,20 @@
 import type { MetaFunction } from '@remix-run/node';
+import { Link } from '@remix-run/react';
 
 import { Button } from '~/components/ui/button';
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'TODO: Your app title' }, { name: 'description', content: 'TODO: Your app description' }];
+  return [{ title: 'Stickerbook' }, { name: 'description', content: 'Track your collection progress' }];
 };
 
-export default function Index() {
+export default function Home() {
   return (
     <section>
-      <h2>TODO: Your page title</h2>
+      <h2 className="text-2xl font-bold mb-4">Home</h2>
 
-      <Button>Let's go</Button>
+      <Button asChild>
+        <Link to="/collection">Let's go</Link>
+      </Button>
     </section>
   );
 }

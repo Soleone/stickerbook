@@ -14,7 +14,9 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["./app/*"],
+      "crypto": ["node_modules/crypto-browserify"],
+      "events": ["node_modules/eventemitter3"],
     },
 
     // Remix takes care of building everything in `remix build`.
