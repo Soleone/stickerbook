@@ -1,38 +1,28 @@
-import type { MetaFunction } from '@remix-run/node';
+import type { LoaderFunction, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
+import { useState } from 'react';
+import Asset from '~/components/Asset';
+import HighlightedAsset from '~/components/HighlightedAsset';
 import { listAssets } from '~/lib/imx';
-import { Asset } from '~/types';
+import { cn } from '~/lib/utils';
+import { Asset as AssetType } from '~/types';
 
-const user = '0xe1cdf3d734d3cf23ad422547759aaf0fb9e49788';
+const DEFAULT_ADDRESS = '0xe1cdf3d734d3cf23ad422547759aaf0fb9e49788';
 
-export async function loader() {
-  console.log('loader');
-  const assets: Asset[] = await listAssets(user);
-  console.log(assets);
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  const url = new URL(request.url);
+  const address = url.searchParams.get('address');
+
+  const assets: AssetType[] = await listAssets(address ?? DEFAULT_ADDRESS);
   return { assets };
-
-  const staticAssets = {
-    assets: [
-      {
-        id: 1,
-        name: 'Sticker 1',
-        image: 'https://via.placeholder.com/150',
-      },
-      {
-        id: 2,
-        name: 'Sticker 3',
-        image: 'https://via.placeholder.com/150',
-      },
-    ],
-  };
-  return staticAssets;
-}
+};
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Collection' }, { name: 'description', content: 'Track your collection progress' }];
 };
 
 export default function Collection() {
+  const [highlightedAsset, setHighlightedAsset] = useState<AssetType | null>(null);
   const { assets } = useLoaderData<typeof loader>();
 
   return (
@@ -40,11 +30,19 @@ export default function Collection() {
       <h2 className="text-2xl font-bold">Collection</h2>
 
       <p>{assets.length} assets</p>
-      {assets.map((asset) => (
-        <div key={asset.id}>
-          <h3>{asset.name}</h3>
-        </div>
-      ))}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4">
+        {assets.map((asset) => (
+          <Asset key={asset.id} asset={asset} isCollected={true} setHighlightedAsset={setHighlightedAsset} />
+        ))}
+      </div>
+      <div
+        className={cn(
+          'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary p-4 rounded-lg z-10 transition-all duration-300 ease-in-out',
+          highlightedAsset ? 'visible' : 'invisible',
+        )}
+      >
+        {highlightedAsset && <HighlightedAsset asset={highlightedAsset} />}
+      </div>
     </section>
   );
 }
