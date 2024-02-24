@@ -1,4 +1,5 @@
 import { NavLink } from '@remix-run/react';
+import { cn } from '~/lib/utils';
 
 const NAVIGATION = [
   {
@@ -22,11 +23,12 @@ export default function Navigation() {
         <NavLink
           to={path}
           key={path}
-          className={({ isActive }) => {
-            const baseMarkup = 'mr-4';
-            const dynamic = isActive ? 'text-theme-gray-900 underline' : 'text-theme-gray-700';
-            return `${baseMarkup} ${dynamic}`;
-          }}
+          className={({ isActive }) =>
+            cn(
+              'mr-4 p-2 rounded-xl hover:bg-theme-yellow-300 hover:text-theme-yellow-900',
+              isActive ? 'text-theme-gray-900 underline' : 'text-theme-gray-700',
+            )
+          }
         >
           {label}
         </NavLink>

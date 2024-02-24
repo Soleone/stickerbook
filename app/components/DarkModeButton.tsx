@@ -12,7 +12,7 @@ export default function DarkModeButton({ setIsDark, isDark }: Props) {
     <Button
       variant="ghost"
       size="icon"
-      className="text-theme-gray-900 absolute top-2 right-2 hover:bg-theme-yellow-400 hover:text-theme-yellow-900 rounded-full"
+      className="text-theme-gray-900 absolute top-2 right-2 hover:bg-theme-yellow-600 dark:hover:bg-theme-yellow-400 hover:text-theme-yellow-200 dark:hover:text-theme-yellow-900 rounded-full"
       onClick={() => {
         console.log('Toggle dark mode');
         setIsDark((darkMode) => !darkMode);

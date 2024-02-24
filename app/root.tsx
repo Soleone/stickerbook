@@ -27,21 +27,21 @@ export default function App() {
       </head>
 
       <body className={cn('flex flex-col min-h-screen', isDark ? 'dark' : '')}>
-        <header className="md:w-3/5 h-48 md:my-8 px-8 pb-8 md:mx-auto border-1 border-theme-yellow-300 rounded-sm bg-gradient-to-tr from-theme-yellow-400 to-theme-yellow-300 from-75% flex flex-col items-center relative">
+        <header className="w-screen px-8 pb-8 md:mx-auto bg-gradient-to-tr from-theme-yellow-300 to-theme-yellow-500 flex flex-col items-center relative shadow-sm">
           <div className="flex">
             <Navigation />
             <DarkModeButton setIsDark={setIsDark} isDark={isDark} />
           </div>
 
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-foreground dark:text-background">
+            <h1 className="text-3xl font-bold text-theme-gray-900 uppercase">
               <Link to="/">Stickerbook</Link>
             </h1>
             <p className="text-theme-gray-700 mt-2">Track your collection status and show it off.</p>
           </div>
         </header>
 
-        <main className="flex-grow container mx-auto flex flex-col items-center p-4">
+        <main className="flex-grow container mt-8 mx-auto flex flex-col items-center p-4">
           <Outlet />
           <ScrollRestoration />
           <Scripts />
