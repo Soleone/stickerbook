@@ -27,9 +27,8 @@ export default function Collection() {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold">Collection</h2>
-
       <p>{assets.length} assets</p>
+
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4">
         {assets.map((asset) => (
           <Asset key={asset.id} asset={asset} isCollected={true} setHighlightedAsset={setHighlightedAsset} />

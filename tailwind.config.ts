@@ -51,6 +51,34 @@ const config = {
         card: {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
+        },
+        'theme-yellow-100': "var(--theme-yellow-100)",
+        'theme-yellow-600': "var(--theme-yellow-600)",
+        theme: {
+          yellow: {
+            '50': "var(--theme-yellow-50)",
+            '100': "var(--theme-yellow-100)",
+            '200': "var(--theme-yellow-200)",
+            '300': "var(--theme-yellow-300)",
+            '400': "var(--theme-yellow-400)",
+            '500': "var(--theme-yellow-500)",
+            '600': "var(--theme-yellow-600)",
+            '700': "var(--theme-yellow-700)",
+            '800': "var(--theme-yellow-800)",
+            '900': "var(--theme-yellow-900)",
+          },
+          gray: {
+            '50': "var(--theme-gray-50)",
+            '100': "var(--theme-gray-100)",
+            '200': "var(--theme-gray-200)",
+            '300': "var(--theme-gray-300)",
+            '400': "var(--theme-gray-400)",
+            '500': "var(--theme-gray-500)",
+            '600': "var(--theme-gray-600)",
+            '700': "var(--theme-gray-700)",
+            '800': "var(--theme-gray-800)",
+            '900': "var(--theme-gray-900)",
+          }
         }
       },
       borderRadius: {
