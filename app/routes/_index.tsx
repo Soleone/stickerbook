@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
 export default function Home() {
   return (
     <section>
-      <h2 className="text-2xl text-primary-foreground font-bold mb-4">Home</h2>
+      <h2 className="text-2xl text-foreground font-bold mb-4">Home</h2>
 
       <Button color="primary">
         <Link to="/collection">Let's go</Link>

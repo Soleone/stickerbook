@@ -26,7 +26,7 @@
     --theme-gray-800: hsl(0, 0%, 23%);
     --theme-gray-900: hsl(0, 0%, 13%);
 
-    --background: hsl(0 0% 100%);
+    --background: var(--theme-gray-200);
     --foreground: hsl(222.2 84% 4.9%);
 
     --card: hsl(0 0% 100%);
@@ -35,13 +35,13 @@
     --popover: hsl(0 0% 100%);
     --popover-foreground: hsl(222.2 84% 4.9%);
 
-    --primary: var(--theme-yellow-500);
-    --primary-foreground: var(--theme-gray-800);
+    --primary: var(--theme-yellow-400);
+    --primary-foreground: var(--theme-gray-900);
 
     --secondary: hsl(210 40% 96.1%);
     --secondary-foreground: hsl(222.2 47.4% 11.2%);
 
-    --muted: hsl(210 40% 96.1%);
+    --muted: var(--theme-gray-700);
     --muted-foreground: hsl(215.4 16.3% 46.9%);
 
     --accent: hsl(210 40% 96.1%);
@@ -59,7 +59,7 @@
 
   .dark {
     --background: hsl(222.2 84% 4.9%);
-    --foreground: hsl(0, 39%, 28%);
+    --foreground: var(--theme-gray-50);
 
     --card: hsl(222.2 84% 4.9%);
     --card-foreground: hsl(210 40% 98%);
@@ -67,13 +67,13 @@
     --popover: hsl(222.2 84% 4.9%);
     --popover-foreground: hsl(210 40% 98%);
 
-    --primary: hsl(210 40% 98%);
-    --primary-foreground: hsl(222.2 47.4% 11.2%);
+    /* --primary: var(--theme-yellow-300);
+    --primary-foreground: var(--theme-gray-900); */
 
     --secondary: hsl(217.2 32.6% 17.5%);
     --secondary-foreground: hsl(210 40% 98%);
 
-    --muted: hsl(217.2 32.6% 17.5%);
+    --muted: var(--theme-gray-300);
     --muted-foreground: hsl(215 20.2% 65.1%);
 
     --accent: hsl(217.2 32.6% 17.5%);

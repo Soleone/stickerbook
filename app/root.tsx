@@ -20,14 +20,15 @@ export default function App() {
       </head>
 
       <body className="flex flex-col min-h-screen">
-        <nav className="bg-primary p-4 text-white">
+        <div className="h-1 bg-primary"></div>
+        <nav className="p-4 text-foreground mb-4">
           <div className="container mx-auto flex justify-between">
             <header>
-              <h1 className="text-3xl font-bold text-primary-foreground">
+              <h1 className="text-3xl font-bold text-foreground">
                 <Link to="/">Stickerbook</Link>
               </h1>
             </header>
-            <div className="space-x-4">
+            <div className="space-x-4 text-foreground">
               <a href="#" className="hover:underline">
                 Home
               </a>
@@ -48,7 +49,7 @@ export default function App() {
           <LiveReload />
         </main>
 
-        <footer className="bg-gray-700 p-4 text-white text-center">
+        <footer className="p-4 text-muted text-center">
           <p>Soleone - Open Source.</p>
         </footer>
       </body>
