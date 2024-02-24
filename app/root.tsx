@@ -20,10 +20,10 @@ export default function App() {
       </head>
 
       <body className="flex flex-col min-h-screen">
-        <nav className="bg-gray-700 p-4 text-white">
+        <nav className="bg-primary p-4 text-white">
           <div className="container mx-auto flex justify-between">
             <header>
-              <h1 className="text-3xl font-bold">
+              <h1 className="text-3xl font-bold text-primary-foreground">
                 <Link to="/">Stickerbook</Link>
               </h1>
             </header>
