@@ -12,3 +12,12 @@ npm run dev
 ```
 
 This starts your app in development mode, rebuilding assets on file changes.
+
+## TODO
+
+- [x] List GU cards from address
+- [x] Basic navigation
+- [x] Dark mode
+- [x] Highlight asset on click
+- [ ] Checkmarks for collected cards
+- [ ] Collection lists (GU sets)
