@@ -31,16 +31,21 @@ export default function Collection() {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4">
         {assets.map((asset) => (
-          <Asset key={asset.id} asset={asset} isCollected={true} setHighlightedAsset={setHighlightedAsset} />
+          <Asset
+            key={asset.id}
+            asset={asset}
+            isCollected={Math.random() < 0.5}
+            setHighlightedAsset={setHighlightedAsset}
+          />
         ))}
       </div>
       <div
         className={cn(
-          'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary p-4 rounded-lg z-10 transition-all duration-300 ease-in-out',
+          'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-100/90 dark:bg-gray-900/90 p-4 rounded-2xl z-10 transition-all duration-300 ease-in-out',
           highlightedAsset ? 'visible' : 'invisible',
         )}
       >
-        {highlightedAsset && <HighlightedAsset asset={highlightedAsset} />}
+        {highlightedAsset && <HighlightedAsset asset={highlightedAsset} setHighlightedAsset={setHighlightedAsset} />}
       </div>
     </section>
   );

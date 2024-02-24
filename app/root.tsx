@@ -27,7 +27,7 @@ export default function App() {
       </head>
 
       <body className={cn('flex flex-col min-h-screen', isDark ? 'dark' : '')}>
-        <header className="w-screen px-8 pb-8 md:mx-auto bg-gradient-to-tr from-theme-yellow-300 to-theme-yellow-500 flex flex-col items-center relative shadow-sm">
+        <header className="w-screen px-8 pb-8 md:mx-auto bg-gradient-to-tr from-theme-yellow-300 to-theme-yellow-500 flex flex-col items-center relative border-b-2 border-theme-yellow-400">
           <div className="flex">
             <Navigation />
             <DarkModeButton setIsDark={setIsDark} isDark={isDark} />
