@@ -11,7 +11,7 @@ export default function HighlightedAsset({ asset, setHighlightedAsset }: Highlig
   if (!asset) return null;
 
   return (
-    <div className={cn('w-96')} onClick={() => setHighlightedAsset(null)}>
+    <div className={cn('w-80 md:w-96')} onClick={() => setHighlightedAsset(null)}>
       <img src={asset.image_url ?? 'todo-placeholder.jpg'} />
     </div>
   );

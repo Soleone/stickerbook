@@ -17,6 +17,7 @@ This starts your app in development mode, rebuilding assets on file changes.
 
 - [x] List GU cards from address
 - [x] Basic navigation
+- [x] Responsive mobile design
 - [x] Dark mode
 - [x] Highlight asset on click
 - [ ] Checkmarks for collected cards
