@@ -4,87 +4,139 @@
 
 @layer base {
   :root {
-    --theme-yellow-50: hsl(49 100% 96%);
-    --theme-yellow-100: hsl(48 100% 88%);
-    --theme-yellow-200: hsl(48, 95%, 76%);
-    --theme-yellow-300: hsl(48, 94%, 68%);
-    --theme-yellow-400: hsl(44, 92%, 63%);
-    --theme-yellow-500: hsl(42, 87%, 55%);
-    --theme-yellow-600: hsl(36, 77%, 49%);
-    --theme-yellow-700: hsl(29, 80%, 44%);
-    --theme-yellow-800: hsl(22, 82%, 39%);
-    --theme-yellow-900: hsl(15, 86%, 30%);
+    --radix-yellow-1: 60 50% 98%;
+    --radix-yellow-2: 54 91% 95%;
+    --radix-yellow-3: 56 100% 86%;
+    --radix-yellow-4: 53 100% 79%;
+    --radix-yellow-5: 50 100% 72%;
+    --radix-yellow-6: 48 85% 68%;
+    --radix-yellow-7: 46 70% 65%;
+    --radix-yellow-8: 45 65% 53%;
+    --radix-yellow-9: 53 100% 58%;
+    --radix-yellow-10: 52 100% 50%;
+    --radix-yellow-11: 41 100% 31%;
+    --radix-yellow-12: 42 39% 20%;
 
-    --theme-gray-50: hsl(0, 0%, 97%);
-    --theme-gray-100: hsl(0, 0%, 88%);
-    --theme-gray-200: hsl(0, 0%, 81%);
-    --theme-gray-300: hsl(0, 0%, 69%);
-    --theme-gray-400: hsl(0, 0%, 62%);
-    --theme-gray-500: hsl(0, 0%, 49%);
-    --theme-gray-600: hsl(0, 0%, 38%);
-    --theme-gray-700: hsl(0, 0%, 32%);
-    --theme-gray-800: hsl(0, 0%, 23%);
-    --theme-gray-900: hsl(0, 0%, 13%);
+    --radix-yellow-dark-1: 47 29% 6%;
+    --radix-yellow-dark-2: 45 29% 8%;
+    --radix-yellow-dark-3: 45 80% 10%;
+    --radix-yellow-dark-4: 48 100% 11%;
+    --radix-yellow-dark-5: 47 100% 13%;
+    --radix-yellow-dark-6: 48 95% 16%;
+    --radix-yellow-dark-7: 46 63% 25%;
+    --radix-yellow-dark-8: 45 60% 32%;
+    --radix-yellow-dark-9: 53 100% 58%;
+    --radix-yellow-dark-10: 60 100% 67%;
+    --radix-yellow-dark-11: 53 90% 62%;
+    --radix-yellow-dark-12: 53 79% 84%;
 
-    --background: var(--theme-gray-200);
-    --foreground: hsl(222.2 84% 4.9%);
+    --radix-sand-1: 60 20% 99%;
+    --radix-sand-2: 60 8% 97%;
+    --radix-sand-3: 30 7% 94%;
+    --radix-sand-4: 40 6% 91%;
+    --radix-sand-5: 45 6% 88%;
+    --radix-sand-6: 45 5% 85%;
+    --radix-sand-7: 48 5% 80%;
+    --radix-sand-8: 51 5% 72%;
+    --radix-sand-9: 60 3% 54%;
+    --radix-sand-10: 60 2% 50%;
+    --radix-sand-11: 60 3% 38%;
+    --radix-sand-12: 48 8% 12%;
 
-    --card: hsl(0 0% 100%);
-    --card-foreground: hsl(222.2 84% 4.9%);
+    --radix-sand-dark-1: 60 3% 6%;
+    --radix-sand-dark-2: 60 2% 10%;
+    --radix-sand-dark-3: 60 1% 13%;
+    --radix-sand-dark-4: 60 2% 16%;
+    --radix-sand-dark-5: 60 3% 19%;
+    --radix-sand-dark-6: 45 4% 22%;
+    --radix-sand-dark-7: 48 4% 28%;
+    --radix-sand-dark-8: 43 4% 37%;
+    --radix-sand-dark-9: 47 4% 42%;
+    --radix-sand-dark-10: 53 3% 47%;
+    --radix-sand-dark-11: 45 5% 69%;
+    --radix-sand-dark-12: 60 6% 93%;
 
-    --popover: hsl(0 0% 100%);
-    --popover-foreground: hsl(222.2 84% 4.9%);
+    --theme-yellow-50: 49 100% 96%;
+    --theme-yellow-100: 48 100% 88%;
+    --theme-yellow-200: 48 95% 76%;
+    --theme-yellow-300: 48 94% 68%;
+    --theme-yellow-400: 44 92% 63%;
+    --theme-yellow-500: 42 87% 55%;
+    --theme-yellow-600: 36 77% 49%;
+    --theme-yellow-700: 29 80% 44%;
+    --theme-yellow-800: 22 82% 39%;
+    --theme-yellow-900: 15 86% 30%;
 
-    --primary: var(--theme-yellow-500);
-    --primary-foreground: var(--theme-gray-900);
+    --theme-gray-50: 0 0% 97%;
+    --theme-gray-100: 0 0% 88%;
+    --theme-gray-200: 0 0% 81%;
+    --theme-gray-300: 0 0% 69%;
+    --theme-gray-400: 0 0% 62%;
+    --theme-gray-500: 0 0% 49%;
+    --theme-gray-600: 0 0% 38%;
+    --theme-gray-700: 0 0% 32%;
+    --theme-gray-800: 0 0% 23%;
+    --theme-gray-900: 0 0% 13%;
 
-    --secondary: hsl(210 40% 96.1%);
-    --secondary-foreground: hsl(222.2 47.4% 11.2%);
+    --background: var(--radix-sand-1);
+    --foreground: var(--radix-sand-12);
 
-    --muted: var(--theme-gray-700);
-    --muted-foreground: hsl(215.4 16.3% 46.9%);
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --accent: hsl(210 40% 96.1%);
-    --accent-foreground: hsl(222.2 47.4% 11.2%);
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --destructive: hsl(0 84.2% 60.2%);
-    --destructive-foreground: hsl(210 40% 98%);
+    --primary: var(--radix-yellow-9);
+    --primary-foreground: var(--foreground);
 
-    --border: hsl(214.3 31.8% 91.4%);
-    --input: hsl(214.3 31.8% 91.4%);
-    --ring: hsl(222.2 84% 4.9%);
+    --secondary: var(--radix-sand-12);
+    --secondary-foreground: var(--background);
+
+    --muted: var(--radix-sand-2);
+    --muted-foreground: var(--radix-sand-11);
+
+    --accent: var(--radix-sand-4);
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: var(--radix-sand-6);
+    --input: var(--radix-sand-7);
+    --ring: var(--radix-sand-8);
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: hsl(222.2 84% 4.9%);
-    --foreground: var(--theme-gray-50);
+    --background: var(--radix-sand-dark-1);
+    --foreground: var(--radix-sand-dark-12);
 
-    --card: hsl(222.2 84% 4.9%);
-    --card-foreground: hsl(210 40% 98%);
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: hsl(222.2 84% 4.9%);
-    --popover-foreground: hsl(210 40% 98%);
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    /* --primary: var(--theme-yellow-300);
-    --primary-foreground: var(--theme-gray-900); */
+    --primary: var(--radix-yellow-dark-9);
+    --primary-foreground: var(--background);
 
-    --secondary: hsl(217.2 32.6% 17.5%);
-    --secondary-foreground: hsl(210 40% 98%);
+    --secondary: var(--radix-sand-dark-12);
+    --secondary-foreground: var(--background);
 
-    --muted: var(--theme-gray-300);
-    --muted-foreground: hsl(215 20.2% 65.1%);
+    --muted: var(--radix-sand-dark-2);
+    --muted-foreground: var(--radix-sand-dark-11);
 
-    --accent: hsl(217.2 32.6% 17.5%);
-    --accent-foreground: hsl(210 40% 98%);
+    --accent: var(--radix-sand-dark-4);
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: hsl(0 62.8% 30.6%);
-    --destructive-foreground: hsl(210 40% 98%);
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: hsl(217.2 32.6% 17.5%);
-    --input: hsl(217.2 32.6% 17.5%);
-    --ring: hsl(212.7 26.8% 83.9%);
+    --border: var(--radix-sand-dark-6);
+    --input: var(--radix-sand-dark-7);
+    --ring: var(--radix-sand-dark-8);
   }
 }
 

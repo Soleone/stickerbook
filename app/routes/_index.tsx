@@ -12,9 +12,15 @@ export default function Home() {
     <section className="text-center">
       <p className="mb-4">Enter your address to get started.</p>
 
-      <Button color="primary">
-        <Link to="/collection">Let's go</Link>
-      </Button>
+      <div className="flex gap-4 justify-center">
+        <Button variant="default">
+          <Link to="/collection">Let's go</Link>
+        </Button>
+
+        <Button variant="secondary">
+          <Link to="/collection">Abort</Link>
+        </Button>
+      </div>
     </section>
   );
 }

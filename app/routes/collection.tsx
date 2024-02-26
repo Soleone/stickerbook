@@ -31,13 +31,12 @@ export default function Collection() {
 
   return (
     <section className='flex'>
-      <section className='flex flex-col p-4 max-h-96 rounded-md mr-4 gap-2 dark:bg-theme-gray-900'>
+      <section className='flex flex-col p-4 max-h-96 rounded-md mr-4 gap-2'>
         <h2>Filter by set</h2>
         {Object.entries(collectionSetLabels).map(([collectionSetId, label]) => (
           <div key={collectionSetId} className="flex items-center space-x-2 w-48">
             <Checkbox
               id={collectionSetId}
-              className='border-theme-gray-900 bg-transparent'
               checked={collectionSetFilter.includes(collectionSetId)}
               onCheckedChange={(checked) => {
                 setCollectionSetFilter((currentFilters) => {
