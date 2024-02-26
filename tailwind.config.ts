@@ -79,6 +79,8 @@ const config = {
           }
         },
         radix: {
+          'black': "hsl(var(--radix-black))",
+          'muted': "hsl(var(--radix-muted))",
           'yellow': {
             '2': "hsl(var(--radix-yellow-2))",
             '3': "hsl(var(--radix-yellow-3))",

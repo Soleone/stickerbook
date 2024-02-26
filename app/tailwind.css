@@ -133,6 +133,9 @@
     --ring: var(--radix-sand-8);
 
     --radius: 0.5rem;
+
+    --radix-black: var(--radix-sand-12);
+    --radix-muted: var(--radix-sand-10);
   }
 
   .dark {

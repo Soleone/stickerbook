@@ -27,16 +27,16 @@ export default function App() {
       </head>
 
       <body className={cn('flex flex-col min-h-screen', isDark ? 'dark' : '')}>
-        <header className="w-screen px-8 pb-8 md:mx-auto bg-gradient-to-tr from-theme-yellow-300 to-theme-yellow-500 flex flex-col items-center relative border-b-2 border-theme-yellow-400">
+        <header className="w-screen px-8 md:mx-auto bg-gradient-to-tr from-radix-yellow-7 to-radix-yellow-9 flex flex-col items-center relative border-b-2 border-radix-yellow-4">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold mt-4 text-radix-black">
+              <Link to="/">Stickerbook</Link>
+            </h1>
+          </div>
+
           <div className="flex">
             <Navigation />
             <DarkModeButton setIsDark={setIsDark} isDark={isDark} />
-          </div>
-
-          <div className="text-center">
-            <h1 className="text-3xl font-bold text-foreground dark:text-background">
-              <Link to="/">Stickerbook</Link>
-            </h1>
           </div>
         </header>
 

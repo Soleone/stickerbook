@@ -18,15 +18,15 @@ const NAVIGATION = [
 
 export default function Navigation() {
   return (
-    <nav className="p-4 text-foreground mb-4">
+    <nav className="p-4 mb-4">
       {NAVIGATION.map(({ label, path }) => (
         <NavLink
           to={path}
           key={path}
           className={({ isActive }) =>
             cn(
-              'mr-4 p-2 rounded-md hover:bg-muted hover:text-muted-foreground transition-colors',
-              isActive ? 'text-theme-gray-900 underline' : 'text-theme-gray-700',
+              'mr-4 p-2 rounded-md hover:bg-radix-yellow-4 hover:text-radix-black',
+              isActive ? 'text-radix-black' : 'text-radix-muted',
             )
           }
         >
