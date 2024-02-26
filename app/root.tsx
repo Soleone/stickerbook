@@ -34,10 +34,9 @@ export default function App() {
           </div>
 
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-theme-gray-900 uppercase">
+            <h1 className="text-3xl font-bold text-foreground dark:text-background">
               <Link to="/">Stickerbook</Link>
             </h1>
-            <p className="text-theme-gray-700 mt-2">Track your collection status and show it off.</p>
           </div>
         </header>
 

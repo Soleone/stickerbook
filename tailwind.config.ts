@@ -77,7 +77,7 @@ const config = {
             '800': "hsl(var(--theme-gray-800))",
             '900': "hsl(var(--theme-gray-900))",
           }
-        }
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

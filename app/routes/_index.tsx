@@ -20,6 +20,22 @@ export default function Home() {
         <Button variant="secondary">
           <Link to="/collection">Abort</Link>
         </Button>
+
+        <Button variant="outline">
+          <Link to="/collection">Abort</Link>
+        </Button>
+
+        <Button variant="destructive">
+          <Link to="/collection">Abort</Link>
+        </Button>
+
+        <Button variant="ghost">
+          <Link to="/collection">Abort</Link>
+        </Button>
+
+        <Button variant="link">
+          <Link to="/collection">Abort</Link>
+        </Button>
       </div>
     </section>
   );

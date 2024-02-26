@@ -56,6 +56,32 @@
     --radix-sand-dark-11: 45 5% 69%;
     --radix-sand-dark-12: 60 6% 93%;
 
+    --radix-orange-1: 20 60% 99%;
+    --radix-orange-2: 33 100% 96%;
+    --radix-orange-3: 37 100% 92%;
+    --radix-orange-4: 34 100% 85%;
+    --radix-orange-5: 33 100% 80%;
+    --radix-orange-6: 30 100% 75%;
+    --radix-orange-7: 27 87% 71%;
+    --radix-orange-8: 25 80% 63%;
+    --radix-orange-9: 23 93% 53%;
+    --radix-orange-10: 24 100% 47%;
+    --radix-orange-11: 23 100% 40%;
+    --radix-orange-12: 16 50% 23%;
+
+    --radix-orange-dark-1: 27 24% 7%;
+    --radix-orange-dark-2: 28 33% 9%;
+    --radix-orange-dark-3: 29 65% 12%;
+    --radix-orange-dark-4: 28 100% 14%;
+    --radix-orange-dark-5: 28 100% 17%;
+    --radix-orange-dark-6: 27 79% 22%;
+    --radix-orange-dark-7: 25 63% 30%;
+    --radix-orange-dark-8: 23 60% 40%;
+    --radix-orange-dark-9: 23 93% 53%;
+    --radix-orange-dark-10: 26 100% 56%;
+    --radix-orange-dark-11: 26 100% 67%;
+    --radix-orange-dark-12: 30 100% 88%;
+
     --theme-yellow-50: 49 100% 96%;
     --theme-yellow-100: 48 100% 88%;
     --theme-yellow-200: 48 95% 76%;
@@ -82,16 +108,16 @@
     --foreground: var(--radix-sand-12);
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: var(--foreground);
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: var(--foreground);
 
-    --primary: var(--radix-yellow-9);
-    --primary-foreground: var(--foreground);
+    --primary: var(--foreground);
+    --primary-foreground: var(--background);
 
-    --secondary: var(--radix-sand-12);
-    --secondary-foreground: var(--background);
+    --secondary: var(--radix-yellow-4);
+    --secondary-foreground: var(--foreground);
 
     --muted: var(--radix-sand-2);
     --muted-foreground: var(--radix-sand-11);
@@ -99,8 +125,8 @@
     --accent: var(--radix-sand-4);
     --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: var(--radix-orange-9);
+    --destructive-foreground: var(--background);
 
     --border: var(--radix-sand-6);
     --input: var(--radix-sand-7);
@@ -119,11 +145,11 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: var(--radix-yellow-dark-9);
+    --primary: var(--foreground);
     --primary-foreground: var(--background);
 
-    --secondary: var(--radix-sand-dark-12);
-    --secondary-foreground: var(--background);
+    --secondary: var(--radix-yellow-dark-4);
+    --secondary-foreground: var(--foreground);
 
     --muted: var(--radix-sand-dark-2);
     --muted-foreground: var(--radix-sand-dark-11);
@@ -131,8 +157,8 @@
     --accent: var(--radix-sand-dark-4);
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: var(--radix-orange-dark-9);
+    --destructive-foreground: var(--foreground);
 
     --border: var(--radix-sand-dark-6);
     --input: var(--radix-sand-dark-7);
