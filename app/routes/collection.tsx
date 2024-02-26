@@ -30,7 +30,7 @@ export default function Collection() {
   const [collectionSetFilter, setCollectionSetFilter] = useState<string>('');
 
   return (
-    <section className='flex'>
+    <section className='flex flex-col md:flex-row'>
       <section className='flex flex-col p-4 max-h-96 rounded-md mr-4 gap-2'>
         <h2>Filter by set</h2>
         {Object.entries(collectionSetLabels).map(([collectionSetId, label]) => (
