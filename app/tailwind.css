@@ -35,7 +35,7 @@
     --popover: hsl(0 0% 100%);
     --popover-foreground: hsl(222.2 84% 4.9%);
 
-    --primary: var(--theme-yellow-400);
+    --primary: var(--theme-yellow-500);
     --primary-foreground: var(--theme-gray-900);
 
     --secondary: hsl(210 40% 96.1%);

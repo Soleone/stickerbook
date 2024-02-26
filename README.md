@@ -20,5 +20,15 @@ This starts your app in development mode, rebuilding assets on file changes.
 - [x] Responsive mobile design
 - [x] Dark mode
 - [x] Highlight asset on click
+- [ ] Filters
+  - [ ] set
+  - [ ] owned
+  - [ ] quality
+  - [ ] rarity
+- [ ] Sorting
+  - [ ] By quantity
+  - [ ] By price
+- [ ] Summary page for collection stats
+  - [ ] Completed sets in per quality
 - [ ] Checkmarks for collected cards
-- [ ] Collection lists (GU sets)
+- [ ] Asset cache

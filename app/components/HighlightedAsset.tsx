@@ -1,18 +1,17 @@
 import { cn } from '~/lib/utils';
-
-import type { Asset } from '~/types';
+import type { Card } from '~/models/card';
 
 interface HighlightedAssetProps {
-  asset?: Asset;
-  setHighlightedAsset: React.Dispatch<React.SetStateAction<Asset | null>>;
+  card?: Card;
+  setHighlightedAsset: React.Dispatch<React.SetStateAction<Card | null>>;
 }
 
-export default function HighlightedAsset({ asset, setHighlightedAsset }: HighlightedAssetProps) {
-  if (!asset) return null;
+export default function HighlightedAsset({ card, setHighlightedAsset }: HighlightedAssetProps) {
+  if (!card) return null;
 
   return (
     <div className={cn('w-80 md:w-96')} onClick={() => setHighlightedAsset(null)}>
-      <img src={asset.image_url ?? 'todo-placeholder.jpg'} />
+      <img src={card.imageUrl ?? 'todo-placeholder.jpg'} alt={card.name} />
     </div>
   );
 }
