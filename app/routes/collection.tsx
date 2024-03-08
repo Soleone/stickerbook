@@ -63,6 +63,10 @@ export default function Collection() {
     }
   }, [loadedCards]);
 
+  useEffect(() => {
+
+  }, [collectionSetFilter, ownedFilter]);
+
   return (
     <section className='flex flex-col md:flex-row'>
       <section className='flex flex-col p-4 max-h-96 rounded-md mr-4 gap-2'>
