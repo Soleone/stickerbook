@@ -1,6 +1,6 @@
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
-import { useState } from 'react';
+import { redirect, useLoaderData } from '@remix-run/react';
+import { useEffect, useState } from 'react';
 import CardAsset from '~/components/CardAsset';
 import HighlightedAsset from '~/components/HighlightedAsset';
 import { cn } from '~/lib/utils';
@@ -10,13 +10,36 @@ import { Checkbox } from '~/components/ui/checkbox';
 
 const DEFAULT_ADDRESS = '0xe1cdf3d734d3cf23ad422547759aaf0fb9e49788';
 
+const saveCachedCards = (cards: Card[]) => {
+  localStorage.setItem('cards', JSON.stringify(cards));
+};
+
+const loadCachedCards = (): Card[] => {
+  const cards = localStorage.getItem('cards');
+  if (cards) {
+    return JSON.parse(cards);
+  }
+  return [];
+};
+
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const url = new URL(request.url);
   const address = url.searchParams.get('address');
+  const reload = url.searchParams.has('reload');
+  const referrer = request.headers.get('Referer');
+  const referrerUrl = new URL(referrer ?? 'https://localhost:3000/');
+  console.log(`Referrer: ${referrer}`);
+  const shouldReload = referrerUrl.searchParams.has('reload');
+  if (reload) {
+    return redirect(url.pathname);
+  }
 
-  const collection = new GuCollection(address ?? DEFAULT_ADDRESS);
-  await collection.load();
-  const cards = collection.cardsByQuality(4);
+  let cards: Card[] = [];
+  if (shouldReload) {
+    const collection = new GuCollection(address ?? DEFAULT_ADDRESS);
+    await collection.load();
+    cards = collection.cardsByQuality(4);
+  }
   return { cards };
 };
 
@@ -26,12 +49,35 @@ export const meta: MetaFunction = () => {
 
 export default function Collection() {
   const [highlightedAsset, setHighlightedAsset] = useState<Card | null>(null);
-  const { cards } = useLoaderData<typeof loader>();
+  const loadedCards = useLoaderData<typeof loader>().cards;
+  const [cards, setCards] = useState<Card[]>([]);
   const [collectionSetFilter, setCollectionSetFilter] = useState<string>('');
+  const [ownedFilter, setOwnedFilter] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (loadedCards.length > 0) {
+      saveCachedCards(loadedCards)
+    } else {
+      const cachedCards = loadCachedCards();
+      setCards(cachedCards);
+    }
+  }, [loadedCards]);
 
   return (
     <section className='flex flex-col md:flex-row'>
       <section className='flex flex-col p-4 max-h-96 rounded-md mr-4 gap-2'>
+        <div className="flex items-center space-x-2 w-48">
+          <Checkbox
+            id="owned"
+            checked={ownedFilter}
+            onCheckedChange={(checked) => setOwnedFilter(owned => !owned)}
+          />
+          <label htmlFor="owned"
+            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 hover:cursor-pointer"
+          >Owned
+          </label>
+        </div>
+
         <h2>Filter by set</h2>
         {Object.entries(collectionSetLabels).map(([collectionSetId, label]) => (
           <div key={collectionSetId} className="flex items-center space-x-2 w-48">
@@ -49,7 +95,7 @@ export default function Collection() {
               }}
             />
             <label htmlFor={collectionSetId}
-              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 hover:cursor-pointer"
             >
               {label}
             </label>
