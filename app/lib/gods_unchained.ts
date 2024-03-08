@@ -109,7 +109,9 @@ export class Collection {
         const card = new Card({
           protoId: parseInt(protoId),
           quality: quality,
-          name: proto.name
+          name: proto.name,
+          set: proto.set,
+          rarity: proto.rarity,
         });
         const key = this.cacheKey(parseInt(protoId), quality);
         this.indexedCards[key] = card;

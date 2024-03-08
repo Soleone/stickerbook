@@ -7,12 +7,14 @@ export interface Card {
   amount: number;
   ethPrice?: number;
   usdPrice?: number;
+  set: string;
+  rarity: string;
 }
 
-type CardConstructor = Pick<Card, 'protoId' | 'quality' | 'name'> & Partial<Pick<Card, 'amount'>>;
+type CardConstructor = Pick<Card, 'protoId' | 'quality' | 'name' | 'set' | 'rarity'> & Partial<Pick<Card, 'amount'>>;
 
 export class Card {
-  constructor({ protoId, quality, name, amount = 0 }: CardConstructor) {
+  constructor({ protoId, quality, name, set, rarity, amount = 0 }: CardConstructor) {
     this.protoId = protoId;
     this.quality = quality;
     this.uniqueId = `${protoId}-${quality}`;
@@ -21,5 +23,7 @@ export class Card {
     this.amount = amount;
     this.ethPrice = 0;
     this.usdPrice = 0;
+    this.set = set;
+    this.rarity = rarity;
   }
 }
