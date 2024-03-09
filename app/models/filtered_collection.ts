@@ -3,8 +3,8 @@ import type { Card } from "./card";
 export interface FilteredCollection {
   allCards: Card[]
   cards: Card[]
-  filterOwned(owned: boolean): void
-  filterBySet(setNames: string[]): void
+  byOwned(owned: boolean): void
+  bySet(setNames: string[]): void
 }
 
 export class FilteredCollection {
@@ -13,12 +13,17 @@ export class FilteredCollection {
     this.cards = cards;
   }
 
-  filterOwned(owned: boolean) {
-    this.cards = this.allCards.filter(card => card.amount > 1)
+  byOwned(owned: boolean) {
+    console.log('Filtering by owned:', owned);
+    this.cards = this.cards.filter(card => owned ? card.amount > 1 : true)
   }
 
-  filterBySet(setNames: String[]) {
-    this.cards = this.allCards.filter(card => setNames.includes(card.set))
+  bySet(sets: String[]) {
+    console.log('Filtering by sets:', sets);
+    this.cards = this.cards.filter(card => sets.length > 0 ? sets.includes(card.set) : true)
   }
 
+  reset() {
+    this.cards = this.allCards;
+  }
 }

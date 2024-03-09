@@ -19,7 +19,7 @@ export class Card {
     this.quality = quality;
     this.uniqueId = `${protoId}-${quality}`;
     this.name = name;
-    this.imageUrl = `https://card.godsunchained.com/?id=${protoId}&q=${quality}`;
+    this.imageUrl = `https://card.godsunchained.com/?id=${protoId}&q=${quality}&w=256`;
     this.amount = amount;
     this.ethPrice = 0;
     this.usdPrice = 0;

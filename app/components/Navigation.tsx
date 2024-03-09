@@ -14,6 +14,10 @@ const NAVIGATION = [
     label: 'About',
     path: '/about',
   },
+  {
+    label: 'Reload',
+    path: '/collection?reload',
+  },
 ];
 
 export default function Navigation() {
